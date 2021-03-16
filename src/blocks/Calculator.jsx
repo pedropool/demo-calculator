@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { digits, multiplier, tolerance } from '../utils/options-select';
-import Select from '../elements/Select';
 import PropTypes from 'prop-types';
+
+import Select from '../elements/Select';
+
+import { digits, multiplier, tolerance } from '../utils/options-select';
 
 const INITIAL_DATA = {
   fisrtDigit: "black",
@@ -49,7 +51,7 @@ const Calculator = ({ calculateResults, clearResults, loading }) => {
 
           <div className="field is-grouped">
             <div className="control">
-              <button className={`${loading ? "is-loading" : ""} button is-link`} onClick={handleSubmit} >Calculate</button>
+              <button className={`${loading ? "is-loading" : ""} button is-link button-calculate`} onClick={handleSubmit} >Calculate</button>
             </div>
             <div className="control">
               <button className={`${loading ? "is-loading" : ""} button is-link is-light`} onClick={handleClear} >Clear</button>

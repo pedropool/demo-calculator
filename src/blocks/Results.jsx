@@ -5,7 +5,7 @@ const Results = ({ results }) => {
   const { resistance, tolerance, min, max } = results;
 
   return (
-    <div className="content">
+    <div className="results-section content">
       <h3>Results</h3>
       <p>Resistance: {resistance}</p>
       <p>Tolerance: {tolerance}</p>
