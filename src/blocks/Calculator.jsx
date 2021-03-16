@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 import Select from '../elements/Select';
 
-import { digits, multiplier, tolerance } from '../utils/options-select';
+import { digits, multiplier } from '../utils/options-select';
 
 const INITIAL_DATA = {
-  fisrtDigit: "black",
-  secondDigit: "black",
-  multiplier: "pink",
-  tolerance: "silver"
+  firstDigit: "brown",
+  secondDigit: "brown",
+  multiplier: "silver",
 }
 
 const Calculator = ({ calculateResults, clearResults, loading }) => {
@@ -41,13 +40,11 @@ const Calculator = ({ calculateResults, clearResults, loading }) => {
       <div className="form">
         <form>
 
-          <Select name="fisrtDigit" label="1st Digit" options={digits} value={data.fisrtDigit} onChange={handleChange} />
+          <Select name="firstDigit" label="1st Digit" options={digits} value={data.firstDigit} onChange={handleChange} />
 
           <Select name="secondDigit" label="2nd Digit" options={digits} value={data.secondDigit} onChange={handleChange} />
 
           <Select name="multiplier" label="Multiplier" options={multiplier} value={data.multiplier} onChange={handleChange} />
-
-          <Select name="tolerance" label="Tolerance" options={tolerance} value={data.tolerance} onChange={handleChange} />
 
           <div className="field is-grouped">
             <div className="control">
