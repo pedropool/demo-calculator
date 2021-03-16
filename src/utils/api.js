@@ -11,8 +11,7 @@ const getResults = async (data, setResults) => {
           {
             'band-a': data.firstDigit,
             'band-b': data.secondDigit,
-            'band-c': data.multiplier,
-            'band-d': data.tolerance
+            'band-c': data.multiplier
           }, 
           { headers }
         )
@@ -22,7 +21,10 @@ const getResults = async (data, setResults) => {
         return response;
       } catch (e) {
         console.log(e);
-        alert('Error: ' + e.response.data.message);
+        if(e.response)
+          alert('Error: ' + e.response.data.message)
+        else
+          alert('Server connection error')
       }
 }
 
