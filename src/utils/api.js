@@ -16,10 +16,7 @@ const getResults = async (data, setResults) => {
           }, 
           { headers }
         )
-        setResults({
-          resistance: response.data.ohm
-        })
-        return response;
+        setResults(response.data)
       } catch (e) {
         console.log(e);
         alert('Error: ' + e.response.data.message);

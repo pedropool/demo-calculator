@@ -6,9 +6,9 @@ import Select from '../elements/Select';
 import { digits, multiplier, tolerance } from '../utils/options-select';
 
 const INITIAL_DATA = {
-  firstDigit: "black",
-  secondDigit: "black",
-  multiplier: "pink",
+  firstDigit: "brown",
+  secondDigit: "brown",
+  multiplier: "silver",
   tolerance: "silver"
 }
 
