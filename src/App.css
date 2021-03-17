@@ -1,3 +1,4 @@
+/* selects should fill the column */
 .select select {
   width: 100%
 }

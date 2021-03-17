@@ -1,17 +1,21 @@
+// import react
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+// import elements
 import Select from '../elements/Select';
 
+// import utilities
 import { digits, multiplier } from '../utils/options-select';
 
+// initial data for selects
 const INITIAL_DATA = {
-  firstDigit: "brown",
-  secondDigit: "brown",
-  multiplier: "silver",
+  firstDigit: "",
+  secondDigit: "",
+  multiplier: "",
 }
 
-const Calculator = ({ calculateResults, clearResults, loading }) => {
+const Calculator = ({ calculateResults, clearResults, loading = false }) => {
   const [data, setData] = useState(INITIAL_DATA)
 
   const handleChange = (event, result) => {
@@ -40,11 +44,11 @@ const Calculator = ({ calculateResults, clearResults, loading }) => {
       <div className="form">
         <form>
 
-          <Select name="firstDigit" label="1st Digit" options={digits} value={data.firstDigit} onChange={handleChange} />
+          <Select name="firstDigit" label="1st Digit" options={digits} value={data.firstDigit} onChange={handleChange} placeholder="Select an option" />
 
-          <Select name="secondDigit" label="2nd Digit" options={digits} value={data.secondDigit} onChange={handleChange} />
+          <Select name="secondDigit" label="2nd Digit" options={digits} value={data.secondDigit} onChange={handleChange} placeholder="Select an option" />
 
-          <Select name="multiplier" label="Multiplier" options={multiplier} value={data.multiplier} onChange={handleChange} />
+          <Select name="multiplier" label="Multiplier" options={multiplier} value={data.multiplier} onChange={handleChange} placeholder="Select an option" />
 
           <div className="field is-grouped">
             <div className="control">

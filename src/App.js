@@ -1,11 +1,18 @@
+// import react
 import React, { useState } from 'react';
-import './App.css'
+
+// import css
+import bulma from 'bulma'; //bulma needs to be imported, otherwise we need to create App.scss and import modules
+import './App.css';
 
 // import blocks
 import Calculator from './blocks/Calculator';
 import Results from './blocks/Results';
+
+// import utilities
 import { getResults } from './utils/api'
 
+// initial props data for <Results />
 const INITIAL_DATA = {
   resistance: "",
   tolerance: "",
@@ -13,7 +20,7 @@ const INITIAL_DATA = {
   max: ""
 }
 
-function App() {
+const App = () =>  {
 
   const [results, setResults] = useState(INITIAL_DATA);
   const [loading, setLoading] = useState(false);
@@ -35,14 +42,15 @@ function App() {
           <h1 className="title">Resistor Ohm Value Calculator</h1>
 
           <div className="columns">
+
             <div className="column is-two-thirds">
               <div className="card">
                 <div className="card-content">
                   <Calculator calculateResults={calculateResults} clearResults={clearResults} loading={loading} />
                 </div>
               </div>
-              
             </div>
+
             <div className="column is-one-third">
               <div className="card">
                 <div className="card-content">
@@ -50,10 +58,11 @@ function App() {
                 </div>
               </div>
             </div>
+            
           </div>
+          
         </div>
       </section>
-      
 
     </div>
   );
